@@ -1,0 +1,21 @@
+# Deterministic DAG Knowledgebase -- runtime deps.
+# No NVIDIA, no Milvus, no ragas/datasets/unstructured/llama-index.
+# LLM = claude_bridge (the `claude` CLI); no python client needed.
+
+fastapi
+uvicorn[standard]
+pydantic>=2
+python-dotenv
+networkx>=3
+pandas
+pypdf
+pyvis            # interactive DAG visualization (service/routers/visualization.py)
+
+# kept only for GraphQAChain / NetworkxEntityGraph reuse in routers/graph_qa.py
+langchain>=0.2,<0.3
+langchain-community>=0.2,<0.3
+langchain-core>=0.2,<0.3
+
+# dev / test
+pytest
+httpx

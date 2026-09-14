@@ -1,0 +1,130 @@
+# ==========================================
+# Environments & Secrets (NEVER COMMIT)
+# ==========================================
+.env
+.env.*
+*.env
+!.env.example
+!GTC25_DLI/.env.example
+
+# ==========================================
+# Python & Virtual Environments
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+.venv/
+*/.venv/
+.ragas_venv/
+*/.ragas_venv/
+venv/
+ENV/
+env/
+
+# ==========================================
+# Testing & Code Quality
+# ==========================================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ==========================================
+# Jupyter Notebooks & Checkpoints
+# ==========================================
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ==========================================
+# Databases, Memory & Runtime Storage
+# ==========================================
+*.sqlite
+*.sqlite3
+*.db
+backend/data/*.sqlite
+backend/data/*.sqlite3
+backend/data/*.db
+.cold_mem/
+**/.cold_mem/
+backend/graphify-out/
+
+# ==========================================
+# Large Models & Heavy Weights (ML / MLOps)
+# ==========================================
+GTC25_DLI/model/
+*/model/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
+
+# ==========================================
+# DVC & Big Data Directories
+# ==========================================
+# DVC cache and runtime outputs (tracked by .dvc / dvc.lock)
+GTC25_DLI/data/
+backend/data/dagkb/
+backend/data/pmc_kb_full/
+backend/data/pmc_kb_full
+backend/data/cold/
+backend/data/records.sqlite
+backend/data/*.graphml
+backend/data/*.json
+!backend/data/.gitkeep
+backend/eval/data/
+backend/eval/report.json
+backend/eval/holdout_report.json
+backend/eval/graph.html
+backend/eval/pmc_graph.html
+
+# ==========================================
+# Logs & System Artifacts
+# ==========================================
+*.log
+logs/
+*.swp
+*.swo
+*~
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# ==========================================
+# Frontend & Interactive UI
+# ==========================================
+.streamlit/
+*/.streamlit/
+
+# ==========================================
+# macOS Swift / App Build Artifacts
+# ==========================================
+.build/
+*/.build/
+macapp/.build/
+*.app/
+macapp/*.app/

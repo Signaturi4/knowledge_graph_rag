@@ -1,0 +1,58 @@
+stages:
+  download_source:
+    wdir: backend
+    cmd: ../.venv/bin/python eval/download_source.py --bytes 3500000 --out eval/data/pmc_head.csv
+    deps:
+      - eval/download_source.py
+    outs:
+      - eval/data/pmc_head.csv
+
+  build_cut:
+    wdir: backend
+    cmd: ../.venv/bin/python eval/build_cut.py 100
+    deps:
+      - eval/build_cut.py
+      - eval/data/pmc_head.csv
+    outs:
+      - eval/data/pmc_cut.jsonl
+
+  feed_dataset:
+    wdir: backend
+    cmd: >-
+      ../.venv/bin/python eval/feed_dataset.py --split 0.8 --resume
+      --data-dir data/pmc_kb_full
+    deps:
+      - eval/feed_dataset.py
+      - eval/data/pmc_cut.jsonl
+      - pipeline
+      - dag_kb
+      - llm
+      - service/assembly.py
+    outs:
+      - data/pmc_kb_full:
+          persist: true   # --resume relies on the directory surviving between runs
+      - eval/data/pmc_holdout.jsonl
+      - eval/data/feed_manifest.json
+
+  holdout_eval:
+    wdir: backend
+    cmd: ../.venv/bin/python eval/run_holdout_eval.py --data-dir data/pmc_kb_full
+    deps:
+      - eval/run_holdout_eval.py
+      - eval/data/pmc_holdout.jsonl
+      - data/pmc_kb_full
+    metrics:
+      - eval/holdout_report.json:
+          cache: true
+
+  export_viz:
+    wdir: backend
+    cmd: >-
+      ../.venv/bin/python eval/export_viz.py --data-dir data/pmc_kb_full
+      --out eval/graph.html
+    deps:
+      - eval/export_viz.py
+      - viz
+      - data/pmc_kb_full
+    outs:
+      - eval/graph.html

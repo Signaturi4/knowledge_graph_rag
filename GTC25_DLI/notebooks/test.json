@@ -1,0 +1,146 @@
+[
+  {
+    "patient_id": "PT-1049",
+    "description": "Chronic disease progression: accumulation of diagnoses, medication side effects, and protocol switching over years.",
+    "emr_documents": [
+      {
+        "doc_id": "DOC-C1-001",
+        "timestamp": "2024-03-15T09:00:00Z",
+        "author_role": "Primary_Care_Physician",
+        "document_type": "Annual_Physical_Note",
+        "content": "Patient reports polyuria and polydipsia for 2 months. Point-of-care fasting glucose is 185 mg/dL. Ordered HbA1c and comprehensive metabolic panel."
+      },
+      {
+        "doc_id": "DOC-C1-002",
+        "timestamp": "2024-03-16T08:15:00Z",
+        "author_role": "Laboratory_System",
+        "document_type": "Lab_Results",
+        "content": "HbA1c: 8.4% (Flag: HIGH). eGFR: 95 mL/min/1.73m2 (Normal)."
+      },
+      {
+        "doc_id": "DOC-C1-003",
+        "timestamp": "2024-03-18T14:30:00Z",
+        "author_role": "Primary_Care_Physician",
+        "document_type": "Clinic_Progress_Note",
+        "content": "Labs confirm Type 2 Diabetes Mellitus (T2DM). Initiating Metformin 500mg BID. Advised on diet and exercise."
+      },
+      {
+        "doc_id": "DOC-C1-004",
+        "timestamp": "2024-09-20T10:00:00Z",
+        "author_role": "Primary_Care_Physician",
+        "document_type": "Clinic_Progress_Note",
+        "content": "6-month follow-up. Patient reports severe, persistent gastrointestinal distress (diarrhea) directly correlated with Metformin. HbA1c improved to 7.2%. Plan: Discontinue Metformin due to adverse effects. Start Semaglutide 0.25mg weekly."
+      },
+      {
+        "doc_id": "DOC-C1-005",
+        "timestamp": "2026-02-10T11:00:00Z",
+        "author_role": "Laboratory_System",
+        "document_type": "Lab_Results",
+        "content": "HbA1c: 6.5%. eGFR: 52 mL/min/1.73m2 (Flag: LOW). Urine Microalbumin/Creatinine Ratio: 310 mg/g (Flag: HIGH)."
+      },
+      {
+        "doc_id": "DOC-C1-006",
+        "timestamp": "2026-02-14T15:45:00Z",
+        "author_role": "Nephrologist",
+        "document_type": "Consultation_Note",
+        "content": "Referral for declining renal function. Patient has developed Stage 3a Chronic Kidney Disease (CKD), secondary to diabetic nephropathy. T2DM remains well-controlled on Semaglutide. Plan: Continue Semaglutide. Add Lisinopril 10mg daily for renal protection."
+      }
+    ]
+  },
+  {
+    "patient_id": "PT-3392",
+    "description": "Acute misdiagnosis: rapid temporal invalidation and surgical state resolution.",
+    "emr_documents": [
+      {
+        "doc_id": "DOC-A1-001",
+        "timestamp": "2026-05-10T18:20:00Z",
+        "author_role": "Triage_Nurse",
+        "document_type": "ED_Triage",
+        "content": "22yo female presenting with diffuse periumbilical pain, nausea, and two episodes of emesis. Afebrile."
+      },
+      {
+        "doc_id": "DOC-A1-002",
+        "timestamp": "2026-05-10T19:45:00Z",
+        "author_role": "ED_Attending_Physician",
+        "document_type": "ED_Discharge_Summary",
+        "content": "Abdomen soft, diffusely tender but no guarding. CBC unremarkable. Diagnosis: Viral Gastroenteritis. Discharged to home with Ondansetron 4mg PRN for nausea. Strict return precautions given."
+      },
+      {
+        "doc_id": "DOC-A1-003",
+        "timestamp": "2026-05-11T06:10:00Z",
+        "author_role": "Triage_Nurse",
+        "document_type": "ED_Triage",
+        "content": "Patient returns. Pain has localized to Right Lower Quadrant (RLQ). Temp: 38.5C. Rebound tenderness present."
+      },
+      {
+        "doc_id": "DOC-A1-004",
+        "timestamp": "2026-05-11T07:30:00Z",
+        "author_role": "Radiologist",
+        "document_type": "CT_Abdomen_Pelvis",
+        "content": "Dilated appendix measuring 11mm with periappendiceal fat stranding. Consistent with acute uncomplicated appendicitis."
+      },
+      {
+        "doc_id": "DOC-A1-005",
+        "timestamp": "2026-05-11T08:00:00Z",
+        "author_role": "General_Surgeon",
+        "document_type": "Surgical_Consult",
+        "content": "Initial diagnosis of gastroenteritis is superseded. Patient has Acute Appendicitis. Consented for emergency laparoscopic appendectomy."
+      },
+      {
+        "doc_id": "DOC-A1-006",
+        "timestamp": "2026-05-11T12:00:00Z",
+        "author_role": "General_Surgeon",
+        "document_type": "Operative_Report",
+        "content": "Procedure completed without complications. Inflamed appendix removed. Post-operative status: Acute appendicitis resolved."
+      }
+    ]
+  },
+  {
+    "patient_id": "PT-7714",
+    "description": "Contradictory data: lab interference causing false positive, later revoked by specialist verification.",
+    "emr_documents": [
+      {
+        "doc_id": "DOC-E1-001",
+        "timestamp": "2026-07-05T09:00:00Z",
+        "author_role": "Primary_Care_Physician",
+        "document_type": "Clinic_Note",
+        "content": "Patient complains of fatigue and mild palpitations. Ordered comprehensive thyroid panel."
+      },
+      {
+        "doc_id": "DOC-E1-002",
+        "timestamp": "2026-07-06T07:00:00Z",
+        "author_role": "Laboratory_System",
+        "document_type": "Lab_Results",
+        "content": "TSH: 0.01 mIU/L (Flag: LOW). Free T4: 3.2 ng/dL (Flag: HIGH)."
+      },
+      {
+        "doc_id": "DOC-E1-003",
+        "timestamp": "2026-07-06T13:00:00Z",
+        "author_role": "Primary_Care_Physician",
+        "document_type": "Addendum_Note",
+        "content": "Labs indicate Hyperthyroidism. Referred to Endocrinology for management."
+      },
+      {
+        "doc_id": "DOC-E1-004",
+        "timestamp": "2026-07-20T10:00:00Z",
+        "author_role": "Endocrinologist",
+        "document_type": "Consultation_Note",
+        "content": "Patient is asymptomatic for hyperthyroidism despite lab values. Upon medication review, patient reports taking 10,000 mcg of Biotin daily for hair growth. This is known to cause assay interference mimicking hyperthyroidism. Instructed to stop Biotin for 7 days; ordered washed TSH/T4 assay."
+      },
+      {
+        "doc_id": "DOC-E1-005",
+        "timestamp": "2026-07-28T08:00:00Z",
+        "author_role": "Laboratory_System",
+        "document_type": "Lab_Results_Washed",
+        "content": "TSH: 1.8 mIU/L (Normal). Free T4: 1.2 ng/dL (Normal)."
+      },
+      {
+        "doc_id": "DOC-E1-006",
+        "timestamp": "2026-07-28T14:00:00Z",
+        "author_role": "Endocrinologist",
+        "document_type": "Follow_Up_Note",
+        "content": "Washed labs are completely normal. The prior diagnosis of Hyperthyroidism is revoked (false positive due to biotin interference). Patient is clinically euthyroid and healthy. No treatment required."
+      }
+    ]
+  }
+]

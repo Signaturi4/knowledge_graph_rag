@@ -1,0 +1,31 @@
+schema: '2.0'
+stages:
+  download_source:
+    cmd: ../.venv/bin/python eval/download_source.py --bytes 3500000 --out 
+      eval/data/pmc_head.csv
+    deps:
+    - path: eval/download_source.py
+      hash: md5
+      md5: 47d1bee37ace24e73d8e70517d2f1eac
+      size: 1330
+    outs:
+    - path: eval/data/pmc_head.csv
+      hash: md5
+      md5: 462caafae51ee5d5e740216299e220c5
+      size: 3500000
+  build_cut:
+    cmd: ../.venv/bin/python eval/build_cut.py 100
+    deps:
+    - path: eval/build_cut.py
+      hash: md5
+      md5: e11fe1b86f0fb6a99071f19eb699b029
+      size: 2746
+    - path: eval/data/pmc_head.csv
+      hash: md5
+      md5: 462caafae51ee5d5e740216299e220c5
+      size: 3500000
+    outs:
+    - path: eval/data/pmc_cut.jsonl
+      hash: md5
+      md5: ea56b64c6611298b4afa66aec6b5ad73
+      size: 164601
